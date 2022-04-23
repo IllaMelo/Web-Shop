@@ -1,0 +1,255 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-family: sans-serif;
+    font-weight: 700;
+  
+}
+
+html{
+    height: 100vh;
+    width: 100vw;
+    
+}
+body{
+    
+    
+    background-color: #bfd1eb;
+
+    
+    
+}
+
+menu{
+    display: flex;
+
+    padding: 0.5em 2em;
+    font-size: 1.5em;
+    justify-content: space-between;
+    background-image: url(../imagem/external-content.duckduckgo.com.jpeg);
+}
+li img{
+    margin: 0.5em;
+    cursor: pointer;
+    width: 20px;
+    
+}
+ul{
+    display: flex;
+  
+    
+}
+li{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+h1{
+    margin-top: 0.5em;
+
+
+}
+p:nth-last-of-type(1){
+   
+    font-size: 0.7em;
+    font-weight: 500;
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+
+}
+div.produto-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    width: 35%;
+    height: 15em;
+    margin: 1em;
+    border-radius: 0.5em;
+}
+div.produto img:hover{
+    opacity: 0;
+    
+
+   
+
+}
+
+div.produto img{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5em;
+}
+div.produto{
+    display: flex;    
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5em;
+  
+    position: absolute;
+}
+div.produto-card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5em;
+    justify-content: space-between;
+    background-color: white;
+    padding: 1em;
+}
+div.Open{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5em;
+    justify-content: space-between;
+    background-color: white;
+    padding: 1em;
+    z-index: 1;
+}
+div.info{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+    
+}
+div.info p:nth-last-of-type(1){
+    font-size: 0.5em;
+    
+    width: 50%;
+}
+input{
+    width: 100%;
+    border: none;
+}
+div#cart{
+    display: none;
+    flex-direction: column;
+    background-color: aliceblue;
+    box-shadow: #1a2e4c 1px 10px 10px 1px ;
+    width: 80%;
+    position: fixed;
+    top:25%;
+    left: 10%;
+    align-items: center;
+    border-radius: 1em;
+    z-index: 1;;
+    
+
+}
+div#cart h1{
+    margin: 1em;
+
+    
+}
+div#cart p#del{
+   position: absolute;
+   right: 0.01px;
+   top: 0.1px;
+   padding: 1.7em;
+   cursor: pointer;
+   
+}
+div#cart p#del:hover{
+    color: rgb(245, 0, 0);
+    font-weight: 900;
+    border-radius: 0 1em 0 0;
+}
+
+
+div#cart label{
+    margin-bottom: 1em;
+}
+div#cart input[type="button"]{
+    cursor: pointer;
+    background-color: rgb(119, 119, 219);
+    color: white;
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+div#cart input[type="button"]:hover{
+    opacity: 0.5;
+}
+form{
+    border-top: solid 1px black;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: auto auto;
+    padding: 1em;
+    
+}
+
+/* input type number */
+div.elements{
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-between;
+    
+  
+
+    
+}
+div.elements p{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+input#add-car{
+    margin-left: 0.2rem;
+    cursor: pointer;
+}
+input#add-car:hover{
+    background-color: blue;
+}
+div.elements input:nth-of-type(3){
+    font-size: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+
+#more{
+    width: 25%;
+    cursor: pointer;
+}
+#less{
+    width: 25%;
+    cursor: pointer;
+}
+#more:hover{
+    background-color: rgb(16, 131, 12);
+}
+#less:hover{
+    background-color: rgb(195, 36, 36);
+}
+a{
+    font-size: 1rem;
+    text-decoration: none;
+    color: rgb(218, 150, 23);
+    width: 50%;
+    margin-left: 1em;
+}
+a:hover{
+    text-decoration:underline;
+} 
+@media (max-width:500px){
+    div.produto-container{
+        width: 90%;
+    
+    }
+   
+}

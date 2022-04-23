@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="css/cad.css" rel="stylesheet">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar novos produtos</title>
+</head>
+<body> 
+    <menu>
+       <h1>Produtos Cadastrados</h1>  
+       <a href="index.html"  
+       ><img src="./icons/casa.png"></a>
+    </menu>
+   
+    <main id="principal">
+       
+    <input type="image"id='btn-add'src='icons/add.png' value='Adicionar'/>
+        <table>
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Imagem</td>
+                    <td>Produto</td>
+                    <td>Descrição</td>
+                    <td>Estoque</td>
+                    <td>Preço</td>
+                    <td>Ação</td>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+    
+            </tbody>
+        </table>
+        <div id="container">
+            <input type="button" value="X" id="close">
+                <h1>Cadastrar novos produtos</h1>
+
+        <form method='post' enctype="multipart/form-data">
+            <label for="nome">Link da imagem: </label>
+                        <input type="text"id="imagem">
+                        <label for="nome">Nome do produto:<input type="text"id="nome"> </label>
+                        <label for="descricao">Descrição do produto:<input type="text" id="descricao"> </label>
+                     <div class="col-2">
+                        <label for="estoque">Estoque: <input type="number"id="estoque"></label>
+                        
+                        <label for="preco">Preço:  <input type="text" id ="preco"></label>
+                       
+                     </div>
+                    
+        </form>
+        <input type="button" value="Enviar" id="btn" >
+        </div>
+    
+    </main>
+    <script src="js/cad.js"></script>
+    
+</body>
+</html>
