@@ -1,20 +1,45 @@
 getProdutos = () => JSON.parse(localStorage.getItem("ls_Produtos")) ?? []
 
 
-var val = document.getElementById('quantity')
-count = 0
-Min=()=>{
+
+let count = 0
+Min=(i)=>{
+
+    var val = document.getElementsByClassName('quantity')[i]
+   
     if(count>0){
        count -= 1
        
     }
     val.innerHTML = count 
 }
-Max=()=>{
-    count += 1
+
+Max=(i)=>{
+   produto = getProdutos()[i]
+   var val = document.getElementsByClassName('quantity')[i]
+  
+    if(count<produto.estoque){
+        count += 1
+    
+    }
     val.innerHTML = count
+    
 }
-debugger
+let Total= 0
+
+AddCar=(i)=>{
+    
+    produto = getProdutos()[i]
+   
+    Subtotal = (parseFloat(produto.preco)*count).toFixed(2)
+    Total += +Subtotal
+    if (count>0){
+        document.getElementById("value").innerHTML += `${count} X ${produto.nome} = R$ ${produto.preco}<br>
+    `
+    
+    document.getElementById('Total').innerHTML = `Total = R$ ${Total}`
+    }
+}
 NewCard=(produto, i)=>{
 
      document.getElementById('store').innerHTML +=
@@ -30,15 +55,15 @@ NewCard=(produto, i)=>{
     
     
     <div class = "produto-card" id="card-${i}">
-       <h3>${produto.nome}</h3>
+      <span> <h3>${produto.nome}</h3><p class = "return">Voltar</p></span>
        <p>${produto.descricao}</p>
        <div class="info">
        <p>R$${produto.preco}</p>
-       <p>${produto.estoque} unidades disponíveis</p>
+       <p class="estoque">${produto.estoque} unidades disponíveis</p>
        </div>
        <div class="elements">
-       <input type="button" onclick="Min()" id="less" value="-"/> <p id="quantity">0</p> <input value="+" onclick="Max()" type="button" id="more"/>
-       <input type="button" value="Adicionar ao carrinho" id="add-car">
+       <input type="button" onclick="Min(${i})" id="less" value="-"/> <p class="quantity">0</p> <input value="+" onclick="Max(${i})" type="button" id="more"/>
+       <input type="button" value="Adicionar ao carrinho" class="add-car" onclick="AddCar(${i})">
        </div> 
       </div> 
       </div>
@@ -62,15 +87,6 @@ Close = () => document.getElementById('cart').style.display = 'none'
 Open = () => document.getElementById('cart').style.display = 'flex'
 
 
-// Products=()=>{
-//     let Total = 0
-//     lsProdutos=getProdutos()
-//     for (const i of lsProdutos){
-//         if(produto.estoque > 0){
-
-//         }
-//     }
-// }
 OpenCard=(i)=>{
     document.getElementById(`container-${i}`).style.display = 'none'
     document.getElementById(`card-${i}`).style.display = 'flex'
@@ -94,11 +110,15 @@ ShowCard=(event)=>{
 
 
 }
-let Msg = "";
+let Msg = ""
+
+MsgProduct=()=>{
+    Msg = document.getElementById('value').textContent + document.getElementById('Total').textContent
+
+}
 SendRequest=()=>{
     let CelNumber = ''
     Msg = Msg.replaceAll("<p>", "").replaceAll("</p>", "\n")
-    Msg = Msg.replaceAll("<b>", "*").replaceAll("</b>", "*")
     let nome = document.getElementById("nome").value
     let endereco = document.getElementById("endereco").value
     Msg += `\nNome: *${nome}*`

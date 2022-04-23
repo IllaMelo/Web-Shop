@@ -69,7 +69,7 @@ div.produto-container{
     flex-direction: column;
     position: relative;
 
-    width: 35%;
+    width: 30%;
     height: 15em;
     margin: 1em;
     border-radius: 0.5em;
@@ -106,17 +106,7 @@ div.produto-card{
     background-color: white;
     padding: 1em;
 }
-div.Open{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    border-radius: 0.5em;
-    justify-content: space-between;
-    background-color: white;
-    padding: 1em;
-    z-index: 1;
-}
+
 div.info{
     align-items: center;
     display: flex;
@@ -135,6 +125,7 @@ input{
     border: none;
 }
 div#cart{
+    font-size: 1rem;
     display: none;
     flex-direction: column;
     background-color: aliceblue;
@@ -167,10 +158,27 @@ div#cart p#del:hover{
     font-weight: 900;
     border-radius: 0 1em 0 0;
 }
-
+div#cart p#value{
+    font-size: 0.7em;
+    margin:1em;
+}
+div#cart p#Total{
+    font-size: 0.7em;
+    margin:1em;
+    color: rgb(27, 27, 129);
+    font-weight: 900;
+}
+span{
+    display: flex;
+    justify-content: space-between;
+}
+span p.return{
+    cursor: pointer;
+}
 
 div#cart label{
     margin-bottom: 1em;
+    font-size: 0.8em;
 }
 div#cart input[type="button"]{
     cursor: pointer;

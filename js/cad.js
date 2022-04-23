@@ -57,7 +57,8 @@ Save=()=> {
                  nome: document.getElementById('nome').value,
                  descricao: document.getElementById('descricao').value,
                  preco: document.getElementById('preco').value,
-                 estoque: document.getElementById('estoque').value
+                 estoque: document.getElementById('estoque').value,
+                 quantidade: 0
              } 
              const i = document.getElementById('nome').dataset.i
               if(i=='novo'){
