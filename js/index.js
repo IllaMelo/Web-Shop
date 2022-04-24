@@ -25,7 +25,8 @@
      Subtotal = (parseFloat(produto.preco)*count).toFixed(2)
      Total += +Subtotal
      if (count>0){
-         document.getElementById("value").innerHTML += `${count} X ${produto.nome} = R$ ${produto.preco}<br>
+         document.getElementById("value").innerHTML += `${count} X ${produto.nome} => <br>
+         ${count} x ${produto.preco}  = R$ ${parseFloat(produto.preco)*count}<br>
      `
 
      document.getElementById('Total').innerHTML = `Total = R$ ${Total}`
@@ -69,13 +70,16 @@
  Open = () => document.getElementById('cart').style.display = 'flex'
  // debugger
  OpenCard=(i)=>{
-     if(i.querySelector(".produto").style.display === 'none'){
-        i.querySelector(".produto").style.display = 'flex' 
+     if(i.querySelector(".produto").style.display === 'flex'){
+        i.querySelector(".produto").style.display = 'none' 
      }else{
         i.querySelector(".produto").style.display = 'none'
      }
      
 }
+// CloseCard=(i)=>{
+//     i.querySelector("div[class=produto]:not(.elements)").style.display = 'flex'
+// }
 
  let Msg = ""
  MsgProduct=()=>{
