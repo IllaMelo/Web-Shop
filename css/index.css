@@ -75,7 +75,7 @@ div.produto-container{
     border-radius: 0.5em;
 }
 div.produto img:hover{
-    opacity: 0;
+    opacity: 0.3;
     
 
    
@@ -120,10 +120,19 @@ div.info p:nth-last-of-type(1){
     
     width: 50%;
 }
-input{
+div#cart input{
     width: 100%;
-    border: none;
+    border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+
+  outline: none;
+  border-bottom: 1px solid rgb(6, 6, 79);
+  background-color: aliceblue;
 }
+
+
 div#cart{
     font-size: 1rem;
     display: none;
@@ -136,7 +145,7 @@ div#cart{
     left: 10%;
     align-items: center;
     border-radius: 1em;
-    z-index: 1;;
+    z-index: 1;
     
 
 }
@@ -168,11 +177,8 @@ div#cart p#Total{
     color: rgb(27, 27, 129);
     font-weight: 900;
 }
-span{
-    display: flex;
-    justify-content: space-between;
-}
-span p.return{
+
+p.return{
     cursor: pointer;
 }
 
@@ -191,9 +197,9 @@ div#cart input[type="button"]:hover{
     opacity: 0.5;
 }
 form{
-    border-top: solid 1px black;
+    border-top: dotted 2px black;
     display: flex;
-    width: 100%;
+    width: 90%;
     flex-direction: column;
     margin: auto auto;
     padding: 1em;
@@ -202,9 +208,10 @@ form{
 
 /* input type number */
 div.elements{
-    background-color: antiquewhite;
+    background-color: rgb(240, 240, 240);
     display: flex;
     justify-content: space-between;
+    border-radius: 0.5rem;
     
   
 
@@ -217,12 +224,18 @@ div.elements p{
     align-items: center;
  
 }
-input#add-car{
+div.elements input{
+    border: none;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+}
+input.add-car{
     margin-left: 0.2rem;
     cursor: pointer;
+    padding: 0.2rem;
 }
-input#add-car:hover{
-    background-color: blue;
+input.add-car:hover{
+    background-color: rgb(138, 138, 191);
 }
 div.elements input:nth-of-type(3){
     font-size: 0.5em;
